@@ -15,10 +15,18 @@ use App\Http\Controllers\DefaultController;
 |
 */
 
-Route::get('/', 'DefaultController@default')->name('/');
+Route::get('/', function () {
+    return view('default');
+})->name('/');
 
-Route::get('/about', 'DefaultController@about')->name('About');
+Route::get('/about', function () {
+    return view('about');
+})->name('About');
 
-Route::get('/contact', 'DefaultController@contact')->name('Contact');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('Contact');
 
-Route::get('/insert', 'DefaultController@addNew')->name('Insert');
+Route::get('/insert', function () {
+    return view('insert');
+})->name('Insert');
