@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Models\Defaults;
 
+
 class DefaultController extends Controller
 {
     public function index() {
-        return view ('layouts.default');
+        return view ('default');
     }
 
     public function about() {
@@ -25,18 +26,12 @@ class DefaultController extends Controller
     }
 
     public function dataInsert(Request $request) {
-        // $name = new Defaults;
-        // $name->firstName = $request->insert('firstName');
-        // $name->lastName = $request->insert('lastName');
-        // $name->save();
-        // dd('ok');
-        // return redirect('layout.default');
 
-        Defaults::insert([
-            'firstName' => $request->firstName,
-            'lastName' => $request->lastName
-        ]);
+        $data = new Defaults;
+        $data->firstName = $request->firstName;
+        $data->lastName = $request->lastName;
+        $data->save();
 
-        dd('ok');
+        return redirect()->back();
     }
 }

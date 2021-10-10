@@ -22,7 +22,7 @@
             </form>
 
             <div>
-                <a class="btn btn-block btn-info"href="{{ route('/') }}">Back to home</a>
+                <a class="btn btn-block btn-info"href="{{ route('Default') }}">Back to home</a>
             </div>
         </h1>
     </div>

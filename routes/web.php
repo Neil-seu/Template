@@ -15,20 +15,13 @@ use App\Http\Controllers\DefaultController;
 |
 */
 
-Route::get('/', function () {
-    return view('default');
-})->name('/');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('About');
+Route::get('/', [DefaultController::class, 'index'])->name('Default');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('Contact');
+Route::get('/about', [DefaultController::class, 'about'])->name('About');
 
-Route::get('/insert', function () {
-    return view('insert');
-})->name('Insert');
+Route::get('/contact', [DefaultController::class, 'contact'])->name('Contact');
 
-Route::post('/redirect', ['DefaultController@dataInsert']);
+Route::get('/insert', [DefaultController::class, 'addNew'])->name('Insert');
+
+Route::post('/redirect', [DefaultController::class, 'dataInsert']);

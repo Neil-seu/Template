@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Defaults extends Model
 {
     use HasFactory;
+    protected $table = 'template';
     protected $fillable = ['firstName', 'lastName'];
 }
