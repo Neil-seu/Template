@@ -30,3 +30,5 @@ Route::get('/contact', function () {
 Route::get('/insert', function () {
     return view('insert');
 })->name('Insert');
+
+Route::post('/redirect', ['DefaultController@dataInsert']);

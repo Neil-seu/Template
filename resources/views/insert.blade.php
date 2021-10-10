@@ -6,7 +6,7 @@
     <div class="my-auto col-md-6 bg-secondary">
         <h1 class="">
 
-            <form method="POST">
+            <form method="POST" action="/redirect">
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1" class="text-warning">First name</label>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Defaults;
+
 class DefaultController extends Controller
 {
     public function index() {
@@ -22,7 +24,19 @@ class DefaultController extends Controller
         return view ('insert');
     }
 
-    public function dataInsert() {
-        
+    public function dataInsert(Request $request) {
+        // $name = new Defaults;
+        // $name->firstName = $request->insert('firstName');
+        // $name->lastName = $request->insert('lastName');
+        // $name->save();
+        // dd('ok');
+        // return redirect('layout.default');
+
+        Defaults::insert([
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName
+        ]);
+
+        dd('ok');
     }
 }
