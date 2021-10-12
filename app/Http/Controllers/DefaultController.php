@@ -10,7 +10,8 @@ use App\Models\Defaults;
 class DefaultController extends Controller
 {
     public function index() {
-        return view ('default');
+        $data_View = Defaults::all();
+        return view('default', compact('data_View'));
     }
 
     public function about() {

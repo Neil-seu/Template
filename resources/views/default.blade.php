@@ -8,32 +8,29 @@
             <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
+                
+                @php
+                  $i = 1;
+                @endphp
+                @foreach ($data_View as $post)
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>
-                        <a class="btn btn-success"href="#">Edit</a>
-                        <a class="btn btn-danger"href="#">Delete</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
+                    <th>{{ $i++ }}</th>
+                    <td>{{ $post->firstName }}</td>
+                    <td>{{ $post->lastName }}</td>
                     <td>
                         <a class="btn btn-success"href="#">Edit</a>
                         <a class="btn btn-danger"href="#">Delete</a>
                     </td>
                   </tr>
                 </tbody>
+                @endforeach
             </table>
 
             <div>
