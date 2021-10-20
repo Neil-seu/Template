@@ -25,14 +25,14 @@
                     <td>{{ $post->firstName }}</td>
                     <td>{{ $post->lastName }}</td>
                     <td>
-                        <a class="btn btn-success"href="#">Edit</a>
-                        <a class="btn btn-danger"href="#">Delete</a>
+                        <a class="btn btn-success"href="{{ url('/dataedit') }}/{{ $post->id }}">Edit</a>
+                        <a class="btn btn-danger"href="{{ url('/delete') }}/{{ $post->id }}">Delete</a>
                     </td>
                   </tr>
                 </tbody>
                 @endforeach
             </table>
-
+            {{-- {{ $data_View->links() }} --}}
             <div>
                 <a class="btn btn-block btn-info"href="{{ route('Insert') }}">Add</a>
             </div>

@@ -25,3 +25,9 @@ Route::get('/contact', [DefaultController::class, 'contact'])->name('Contact');
 Route::get('/insert', [DefaultController::class, 'addNew'])->name('Insert');
 
 Route::post('/redirect', [DefaultController::class, 'dataInsert']);
+
+Route::get('/dataedit/{edit_id}', [DefaultController::class, 'dataEdit'])->name('');
+
+Route::post('/update', [DefaultController::class, 'dataUpdate'])->name('Update');
+
+Route::get('/delete/{delete_id}', [DefaultController::class, 'dataDelete'])->name('');
